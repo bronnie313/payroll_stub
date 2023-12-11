@@ -2,7 +2,7 @@ class Employee
     attr_reader :name, :salary
 
     def name=(name)
-        if value == "" 
+        if name == "" 
             raise "Sorry the name can't be blank"
         else
             @name = name
@@ -18,8 +18,13 @@ class Employee
     end
 
     def print_pay_stub
-        puts "Employee name: #{@name}"
+        puts "Name: #{@name}"
         pay_for_period = (@salary / 356) * 14
-        puts "Pay This period : #{pay_for_period}"
+        puts "Pay This period : $#{pay_for_period}"
     end
 end
+
+amy = Employee.new
+amy.name = "Amy"
+amy.salary = 12000
+amy.print_pay_stub
