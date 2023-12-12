@@ -30,6 +30,6 @@ class Employee
     end
 end
 
-amy = Employee.new("", 50000).print_pay_stub
+amy = Employee.new("John Doe", 50000).print_pay_stub
 amy = Employee.new("John Doe").print_pay_stub
 Employee.new.print_pay_stub
