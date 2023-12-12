@@ -1,9 +1,9 @@
 class Employee
     attr_reader :name, :salary
 
-    def initialize
-        @name = "Anonymous"
-        @salary = 0.0
+    def initialize(name = "Anonymous", salary = 0.0)
+        @name = name 
+        @salary = salary
     end
 
     def name=(name)
@@ -30,7 +30,6 @@ class Employee
     end
 end
 
-amy = Employee.new
-# amy.name = "Amy"
-# amy.salary = 12000
-amy.print_pay_stub
+amy = Employee.new("John Doe", 50000).print_pay_stub
+amy = Employee.new("John Doe").print_pay_stub
+Employee.new.print_pay_stub
