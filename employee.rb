@@ -19,6 +19,25 @@ class Employee
 end
 
 def SalariedEmployee < Employee
+    attr_reader :salary
+
+    def initialize(salary = 0.0)
+        self.salary = salary
+    end
+
+    def salary=(salary)
+        if salary < 0
+            raise "A salary of $#{salary} is not valid"
+        end
+        @salary = salary
+    end
+
+    def print_pay_stub
+        print_name
+        pay_for_period = (salary / 365) * 14
+        formated_pay = format("0.2f", pay_for_period)
+        puts "Pay This period: $#{formated_pay}"
+    end
 end
 
 def HourlyEmployee < Employee
